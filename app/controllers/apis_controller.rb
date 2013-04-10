@@ -23,7 +23,7 @@ class ApisController < ApplicationController
     @api = Api.new(params[:api])
     
     if @api.save
-      redirect_to @api, notice: "Yay!"
+      redirect_to apis_path, notice: "Yay!"
     end
   end
   

@@ -9,10 +9,7 @@
 <%= attribute.description %><br>
 </div>
 <% end %>
-<br>
-<br>
-<br>
-Don't see an API? <%= link_to "Add one", new_api_path %>
+
 <% else %>
 <% @api.each do |attribute| %>
 <div class="box">
@@ -21,3 +18,5 @@ Don't see an API? <%= link_to "Add one", new_api_path %>
 </div>
 <% end %>
 <% end %>
+<br><br><br>
+<div class="add">Don't see an API? <%= link_to "Add one", new_api_path %></div>
