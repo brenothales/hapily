@@ -6,9 +6,16 @@ class ApisController < ApplicationController
       
       @all = Api.where("category = ?", @cat_name)
     end
+    
+    @api = Api.all
   end
   
   def new
+    @categories = Categories.all
+    @cat_array = []
+    @categories.each do |cat|
+      @cat_array.push(cat.name)
+    end
     @api = Api.new
   end
   
@@ -16,8 +23,12 @@ class ApisController < ApplicationController
     @api = Api.new(params[:api])
     
     if @api.save
-      redirect_to apis_path, notice: "Yay!"
+      redirect_to @api, notice: "Yay!"
     end
+  end
+  
+  def show
+    @api = Api.all
   end
   
 end

@@ -7,7 +7,7 @@
 	<%= f.text_field :description %><br>
 	
 	<%= f.label :category %>
-	<%= f.text_field :category %><br>
+	<%= f.select(:category, @cat_array) %><br>
 	
 	<%= f.label :url %>
 	<%= f.text_field :url %><br><br>

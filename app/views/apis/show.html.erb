@@ -1,0 +1,6 @@
+<% @api.each do |attribute| %>
+<div class="box">
+<%= link_to attribute.name, attribute.url, :target => "_blank" %>:<br>
+<%= attribute.description %><br>
+</div>
+<% end %>

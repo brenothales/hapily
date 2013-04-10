@@ -9,6 +9,7 @@ Hapily::Application.routes.draw do
   
   get "apis(/:tag)" => "apis#index", as: :apis
 
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
