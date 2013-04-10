@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyText
+  description: MyText
+  category: MyText
+  favorites: 1
+
+two:
+  name: MyText
+  description: MyText
+  category: MyText
+  favorites: 1

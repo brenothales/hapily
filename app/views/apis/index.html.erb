@@ -1,0 +1,18 @@
+<% if params[:categories] %>
+<h2><%= @cat_name %> APIs </h2>
+
+<br>
+
+<% @all.each do |attribute| %>
+<div class="box">
+<%= link_to attribute.name, attribute.url %>:<br>
+<%= attribute.description %><br>
+</div>
+<% end %>
+<br>
+<br>
+<br>
+Don't see an API? <%= link_to "Add one", new_api_path %>
+<% else %>
+Hey
+<% end %>
