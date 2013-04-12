@@ -1,8 +1,5 @@
-<% if params[:categories] %>
-<h2><%= @cat_name %> APIs </h2>
-
-<br>
-
+<%= render 'filters' %>
+<br><br>
 <% @all.each do |attribute| %>
 <div class="box">
 <%= link_to attribute.name, attribute.url, :target => "_blank" %>:<br>
@@ -10,13 +7,4 @@
 </div>
 <% end %>
 
-<% else %>
-<% @api.each do |attribute| %>
-<div class="box">
-<%= link_to attribute.name, attribute.url, :target => "_blank" %>:<br>
-<%= attribute.description %><br>
-</div>
-<% end %>
-<% end %>
-<br><br><br>
-<div class="add">Don't see an API? <%= link_to "Add one", new_api_path %></div>
+
