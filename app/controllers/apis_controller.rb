@@ -31,9 +31,4 @@ class ApisController < ApplicationController
   def show
     @api = Api.all
   end
-  
-  def newcategory
-    @newcat = Categories.new
-  end
-  
 end
