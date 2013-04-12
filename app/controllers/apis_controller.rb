@@ -24,12 +24,16 @@ class ApisController < ApplicationController
     @api = Api.new(params[:api])
     
     if @api.save
-      redirect_to apis_path, notice: "Yay!"
+      redirect_to apis_path
     end
   end
   
   def show
     @api = Api.all
+  end
+  
+  def newcategory
+    @newcat = Categories.new
   end
   
 end
