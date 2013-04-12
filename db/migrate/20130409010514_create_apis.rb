@@ -5,6 +5,8 @@ class CreateApis < ActiveRecord::Migration
       t.text :description
       t.text :category
       t.integer :favorites
+
+      t.timestamps
     end
   end
 end
