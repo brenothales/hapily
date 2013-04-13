@@ -15,7 +15,8 @@ Hapily::Application.routes.draw do
   get 'categories/new' => 'categories#new', :as => :new_category
   post 'categories/create' => 'categories#create'
   
-  get 'profile' => 'users#show'
+  get 'profile(/:user_id)' => 'users#show', :as => :profile
+  get 'all_users' => 'users#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
