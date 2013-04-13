@@ -1,5 +1,9 @@
-<h1>About hapily</h1>
-<p>hapily is a directory of APIs. Filter by category, vote for your favorites, or make it better by adding more.
-<%= mail_to("sararob@brandeis.edu", "Email me") %>
-with your feedback.
+<h2>About hapily</h2>
+<p>hapily is a directory of 
+	<%= link_to "APIs", "http://en.wikipedia.org/wiki/Application_programming_interface" %>
+	. Filter by category, vote for your favorites, or make it better by 
+	<%= link_to "adding more", new_api_path %>
+	. I'd love your feedback! Please
+<%= mail_to("sararob@brandeis.edu", "email me") %>
+with your comments or suggestions.
 </p>

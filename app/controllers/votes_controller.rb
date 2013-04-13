@@ -26,7 +26,7 @@ class VotesController < ApplicationController
             
             #Update vote count in Api model...figure out how to do this
             
-            flash[:success] = "Your vote was added"
+            flash[:notice] = "Your vote was added"
             redirect_to root_path
           else
             flash[:error] = "Your vote was not saved"
