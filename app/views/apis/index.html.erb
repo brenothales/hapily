@@ -1,6 +1,7 @@
 <h2 class="api-index">API Directory</h2>
 <%= render 'filters' %>
 <br><br>
+<div id="apis">
 <% @all.each do |attribute| %>
 <div class="box">
 <%= link_to image_tag('grayarrow.gif'), votes_path(api_id: attribute.id, value: 1), method: :post  %>
@@ -9,3 +10,4 @@
 Votes: <%= Vote.where("api_id = ?", attribute.id).count %>
 </div>
 <% end %>
+</div>
