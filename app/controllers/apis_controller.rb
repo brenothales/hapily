@@ -8,7 +8,6 @@ class ApisController < ApplicationController
     else
       @all = Api.all
     end
-
   end
   
   def new

@@ -1,8 +1,9 @@
 class Api < ActiveRecord::Base
-  attr_accessible :category, :description, :favorites, :name, :url
+  
+  attr_accessible :category, :description, :favorites, :name, :url, :votes
   
   validates_presence_of :name, :description, :category, :url
   validates :url, :format => URI::regexp(%w(http https))
   
-  has_many :votes, :as => :voteable
+  has_many :votes
 end
