@@ -1,0 +1,18 @@
+<% user = User.find(params[:user_id]) %>
+<%= gravatar_for user %>
+<h3><%= user.name %></h3>
+<p class="since">Member since: <%= @member_since %></p>
+<p class="total">Total votes: <%= @user_votes.count %></p>
+<br>
+<h4>My Votes</h4>
+<% @user_votes.each do |api| %>
+	<% @api_id = api.api_id %>
+	<% @current_api = Api.where("id = ?", @api_id) %>
+	<% @current_api.each do |attribute| %>
+	<div class="box">
+		<%= link_to attribute.name, attribute.url, :target => "_blank" %>: <br>
+		<%= attribute.description %><br><br>
+		Total votes: <%= Vote.where("api_id = ?", @api_id).count %>
+	</div>
+	<% end %>
+<% end %>
