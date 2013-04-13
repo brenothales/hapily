@@ -1,7 +1,10 @@
 Hapily::Application.routes.draw do
+  devise_for :users
+
   root :to => "apis#index"
   
   resources :apis
+  resources :votes
   
   get "static_pages/home"
 

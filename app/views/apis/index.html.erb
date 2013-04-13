@@ -2,6 +2,7 @@
 <br><br>
 <% @all.each do |attribute| %>
 <div class="box">
+<% if signed_in? %><%= link_to image_tag('grayarrow.gif'), "#" %><% end %>
 <%= link_to attribute.name, attribute.url, :target => "_blank" %>:<br>
 <%= attribute.description %><br>
 </div>
