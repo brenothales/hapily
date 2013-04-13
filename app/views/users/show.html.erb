@@ -5,6 +5,7 @@
 <p class="total">Total votes: <%= @user_votes.count %></p>
 <br>
 <h4>My Votes</h4>
+<div id="show-faves">
 <% @user_votes.each do |api| %>
 	<% @api_id = api.api_id %>
 	<% @current_api = Api.where("id = ?", @api_id) %>
@@ -16,3 +17,4 @@
 	</div>
 	<% end %>
 <% end %>
+</div>
