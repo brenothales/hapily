@@ -9,8 +9,8 @@ Hapily::Application.routes.draw do
   
   get 'apis(/:tag)' => 'apis#index'
   
-  get 'newcategory' => 'apis#newcategory'
-
+  get 'categories/new' => 'categories#new', :as => :new_category
+  post 'categories/create' => 'categories#create'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

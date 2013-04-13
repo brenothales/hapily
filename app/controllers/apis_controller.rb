@@ -24,7 +24,11 @@ class ApisController < ApplicationController
     @api = Api.new(params[:api])
     
     if @api.save
+      flash[:notice] = "Your API has been saved."
       redirect_to apis_path
+    else
+      flash[:notice] = "There was an error and your API was not saved."
+      redirect_to new_api_path
     end
   end
   

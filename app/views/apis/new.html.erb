@@ -1,15 +1,13 @@
-<%= form_for @api do |f| %>
-
-	<%= f.label :name %>
-	<%= f.text_field :name %><br>
+<h3>Add an API</h3>
+<%= simple_form_for(@api, html: { class: "form-horizontal" } ) do |f| %>
+<fieldset>
+	<%= f.input :name, input_html: { cols: 40, rows: 1 } %>
+	<%= f.input :description, input_html: { cols: 40, rows: 3 } %>
+	<%= f.input :category, collection: @cat_array %>
 	
-	<%= f.label :description %>
-	<%= f.text_field :description %><br>
-	
-	<%= f.label :category %>
-	<%= f.select(:category, @cat_array) %><br>
-	
-	<%= f.label :url %>
-	<%= f.text_field :url %><br><br>
-	<%= f.submit "Add" %>
+	<%= f.input :url %>
+	<div class="form-actions">
+	<%= f.button :submit %>
+	</div>
+</fieldset>
 <% end %>
