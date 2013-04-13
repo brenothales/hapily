@@ -27,7 +27,7 @@ class ApisController < ApplicationController
       flash[:notice] = "Your API has been saved."
       redirect_to apis_path
     else
-      flash[:notice] = "There was an error and your API was not saved."
+      flash[:error] = "Your API was not saved. Please check the fields and try again."
       redirect_to new_api_path
     end
   end
