@@ -7,7 +7,13 @@ class ApisController < ApplicationController
       @all = Api.where("category = ?", params[:tag]).order("votes desc").page(params[:page]).per_page(25)
     else
       @all = Api.all
-      @all = Api.order("votes desc").page(params[:page]).per_page(25)
+      @all = Api.order("votes desc").page(params[:page]).per_page(5)
+    end
+    
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @all }
+      format.js
     end
   end
   

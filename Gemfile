@@ -8,6 +8,7 @@ gem "cocaine", "~> 0.5.0"
 gem 'will_paginate'
 gem 'bootstrap-will_paginate', '0.0.6'
 gem 'tweetstream'
+gem "letter_opener", :group => :development
 
 group :production do
   gem 'pg'
