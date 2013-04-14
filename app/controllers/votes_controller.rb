@@ -34,8 +34,9 @@ class VotesController < ApplicationController
           end
       end
     else
-      redirect_to new_user_session_path
-      flash[:error] = "You must be signed in to vote on an API"
+      link = "<a href='/users/sign_in'>Sign in here.</a>"
+      flash[:error] = "You must be signed in to vote on an API. #{link}".html_safe
+      redirect_to root_path
     end
   end
 end
