@@ -5,6 +5,7 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'simple_form'
 gem "cocaine", "~> 0.5.0"
+gem 'will_paginate'
 gem 'bootstrap-will_paginate', '0.0.6'
 gem 'tweetstream'
 

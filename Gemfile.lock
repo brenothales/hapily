@@ -171,3 +171,4 @@ DEPENDENCIES
   sqlite3
   tweetstream
   uglifier (>= 1.0.3)
+  will_paginate

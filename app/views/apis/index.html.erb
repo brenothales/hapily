@@ -12,3 +12,5 @@ Votes: <%= Vote.where("api_id = ?", attribute.id).count %>
 </div>
 <% end %>
 </div>
+
+<%= will_paginate @all %>

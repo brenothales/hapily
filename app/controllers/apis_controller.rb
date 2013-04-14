@@ -4,10 +4,10 @@ class ApisController < ApplicationController
     @categories = Categories.all
     
     if params[:tag]
-      @all = Api.where("category = ?", params[:tag]).order("votes desc")
+      @all = Api.where("category = ?", params[:tag]).order("votes desc").page(params[:page]).per_page(25)
     else
       @all = Api.all
-      @all = Api.order("votes desc")
+      @all = Api.order("votes desc").page(params[:page]).per_page(25)
     end
   end
   
