@@ -4,9 +4,10 @@ class ApisController < ApplicationController
     @categories = Categories.all
     
     if params[:tag]
-      @all = Api.where("category = ?", params[:tag])
+      @all = Api.where("category = ?", params[:tag]).order("votes desc")
     else
       @all = Api.all
+      @all = Api.order("votes desc")
     end
   end
   
