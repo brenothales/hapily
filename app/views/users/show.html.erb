@@ -11,7 +11,8 @@
 	<% @current_api = Api.where("id = ?", @api_id) %>
 	<% @current_api.each do |attribute| %>
 	<div class="box">
-		<%= link_to attribute.name, attribute.url, :target => "_blank" %>: <br>
+		<%= link_to attribute.name, attribute.url, :target => "_blank" %>:
+		<p class="category"><%= attribute.category %></p><br><br>
 		<%= attribute.description %><br><br>
 		Total votes: <%= Vote.where("api_id = ?", @api_id).count %>
 	</div>
