@@ -6,4 +6,18 @@
 	. I'd love your feedback! Please
 <%= mail_to("sararob@brandeis.edu", "email me") %>
 with your comments or suggestions.
-</p>
+</p><br><br><br>
+
+<%= form_tag charges_path do %>
+  <article>
+    <label class="amount">
+      <h3><span>Donate $5</span></h3>
+    </label>
+		<p>Enjoyed using hapily? Consider making a donation. I'm teaching myself Rails and your donation will go towards my continued programming education. It's a great cause!</p>
+  </article>
+
+  <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="Donation to Sara's Coding Fund"
+          data-amount="500"></script>
+<% end %>

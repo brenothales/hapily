@@ -9,6 +9,8 @@ gem 'will_paginate'
 gem 'bootstrap-will_paginate', '0.0.6'
 gem 'tweetstream'
 gem "letter_opener", :group => :development
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+gem 'figaro'
 
 group :production do
   gem 'pg'

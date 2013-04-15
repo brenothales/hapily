@@ -5,6 +5,7 @@ Hapily::Application.routes.draw do
   
   resources :apis
   resources :votes
+  resources :charges
   
   get "static_pages/home"
 
