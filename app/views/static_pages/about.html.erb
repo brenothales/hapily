@@ -8,7 +8,8 @@
 with your comments or suggestions.
 </p><br><br><br>
 
-<%= form_tag charges_path do %>
+<!--
+<%= form_tag charges_path #do %>
   <article>
     <label class="amount">
       <h3><span>Donate $5</span></h3>
@@ -17,7 +18,8 @@ with your comments or suggestions.
   </article>
 
   <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-key="<%= #Rails.configuration.stripe[:publishable_key] %>"
           data-description="Donation to Sara's Coding Fund"
           data-amount="500"></script>
-<% end %>
+<% #end %>
+-->
