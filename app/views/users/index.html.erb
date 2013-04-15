@@ -1,12 +1,16 @@
+<br>
 <% @users.each do |user| %>
-	<% @user_votes = Vote.where("user_id = ?", user.id).count %>
-  <% @member_since = user.created_at.strftime("%B %d, %Y") %>
 
+		<% @user_votes = Vote.where("user_id = ?", user.id).count %>
+  	<% @member_since = user.created_at.strftime("%B %d, %Y") %>
+	<div class="user-pic">
 	<%= gravatar_for(user, size: 75) %>
+	</div>
 	<div class="user-info">
 		<%= link_to user.name, profile_path(user_id: user.id) %><br>
 		Member Since: <%= @member_since %><br>
 		Votes: <%= @user_votes %>
-	</div>
+	<br><br>
 	<hr>
+	</div>
 <% end %>
