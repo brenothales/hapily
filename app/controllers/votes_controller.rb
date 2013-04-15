@@ -7,7 +7,7 @@ class VotesController < ApplicationController
       @counter = 0
       
       @current_votes.each do |vote|
-        if vote.user_id = current_user.id
+        if vote.user_id == current_user.id
           @counter += 1
         end
       end
