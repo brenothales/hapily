@@ -16,6 +16,8 @@
 //= require bootstrap
 //= require_tree .
 
+Stripe.setPublishableKey('pk_live_p8UsxGG9ledouTLASW3vYCBF');
+
 $(function() {
   $("#credit-card input, #credit-card select").attr("disabled", false);
 
