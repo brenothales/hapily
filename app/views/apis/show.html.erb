@@ -1,7 +1,7 @@
 <h3 class="api-header"><%= link_to @api.name, @api.url, :target => "_blank" %></h3>
 
-<p class="api-info"><span class="api-subhead">Description</span>: <%= @api.description %></p>
-<p class="api-info"><span class="api-subhead">Votes</span>: <%= @api["votes"] %></p>
+<p class="api-info"><%= @api.description %></p>
+<p class="api-info">Votes: <%= @api["votes"] %></p>
 <br>
 <%= render 'reviews' %>
 <br><br>

@@ -3,4 +3,6 @@ class Review < ActiveRecord::Base
   
   belongs_to :api
   belongs_to :user
+  
+  validates_presence_of :rating, :thoughts
 end
