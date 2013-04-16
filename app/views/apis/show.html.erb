@@ -5,7 +5,7 @@
 <br>
 <%= render 'reviews' %>
 <br><br>
-<% if signed_in? %>
+
 <%= link_to "Add a review", new_review_path(:api_id => @api.id) %>
-<% end %>
+
 <br><br>
