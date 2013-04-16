@@ -39,6 +39,6 @@ class ApisController < ApplicationController
   end
   
   def show
-    @api = Api.all
+    @api = Api.find(params[:id])
   end
 end

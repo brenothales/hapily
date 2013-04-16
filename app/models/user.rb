@@ -10,4 +10,5 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
   
   has_many :votes
+  has_many :reviews
 end

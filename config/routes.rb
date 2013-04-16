@@ -6,6 +6,7 @@ Hapily::Application.routes.draw do
   resources :apis
   resources :votes
   resources :charges
+  resources :reviews
   
   get "static_pages/home"
 
@@ -18,6 +19,8 @@ Hapily::Application.routes.draw do
   
   get 'profile(/:user_id)' => 'users#show', :as => :profile
   get 'all_users' => 'users#index'
+  
+  get 'apis(/:id)' => 'apis#show', :as => :apipage
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
