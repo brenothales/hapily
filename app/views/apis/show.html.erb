@@ -2,7 +2,10 @@
 
 <p class="api-info"><span class="api-subhead">Description</span>: <%= @api.description %></p>
 <p class="api-info"><span class="api-subhead">Votes</span>: <%= @api["votes"] %></p>
+<br>
+<%= render 'reviews' %>
 <br><br>
-<h4>Used this API? Add a review:</h4>
-
-<%= link_to "Back to APIs", root_path, :class => "btn" %>
+<% if signed_in? %>
+<%= link_to "Add a review", new_review_path(:api_id => @api.id) %>
+<% end %>
+<br><br>

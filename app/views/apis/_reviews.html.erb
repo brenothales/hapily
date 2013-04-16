@@ -1,0 +1,16 @@
+<h4>Reviews</h4>
+<hr>
+	<% @reviews.each do |review| %>
+	<div class="review">
+	<% (review.rating).times do |i| %>
+	<%= image_tag('star-icon.png') %>
+	<% end %><br>
+	<%= review.thoughts %><br><br>
+	<% @user = User.where("id = ?", review.user_id) %>
+	<% @user.each do |user| %>
+		&#8212 <%= link_to user.name, profile_path(:user_id => user.id) %>
+	<% end %>
+	<div class="review-time"><%= time_ago_in_words(review.created_at) %> ago</div>
+	<hr class="review-divider">
+	</div>
+	<% end %>

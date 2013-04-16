@@ -40,5 +40,6 @@ class ApisController < ApplicationController
   
   def show
     @api = Api.find(params[:id])
+    @reviews = Review.where("api_id = ?", params[:id])
   end
 end
