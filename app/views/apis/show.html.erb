@@ -5,7 +5,25 @@
 <br>
 <%= render 'reviews' %>
 <br><br>
-
-<%= link_to "Add a review", new_review_path(:api_id => @api.id) %>
+<% if signed_in? %>
+<%= link_to "Add a review", new_review_path(:api_id => @api.id), :class => "add-review btn" %>
 
 <br><br>
+
+
+<div id="review-form">
+<h4>Used this API? Share your thoughts:</h4>
+<%= simple_form_for(@review, html: { class: "form-horizontal" }) do |f| %>
+<fieldset>
+	<%= f.input :rating, collection: 1..5, as: :radio_buttons %>
+	<%= f.input :thoughts, input_html: { cols: 40, rows: 3 } %>
+	<%= f.input :api_id, :as => :hidden, :input_html => { :value => params[:id] } %>
+	<%= f.input :user_id, :as => :hidden, :input_html => { :value => current_user.id } %>
+	
+	<div class="form-actions">
+	<%= f.submit "Submit Review", :class => 'btn' %>
+	</div>
+</fieldset>
+<% end %>
+</div>
+<% end %>
