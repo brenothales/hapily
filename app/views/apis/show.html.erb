@@ -5,6 +5,9 @@
 <br>
 <%= render 'reviews' %>
 <br><br>
+<% unless signed_in? %>
+	<%= link_to "Sign in", new_user_session_path %> to add a review.
+<% end %>
 <% if signed_in? %>
 <%= link_to "Add a review", new_review_path(:api_id => @api.id), :class => "add-review btn" %>
 
