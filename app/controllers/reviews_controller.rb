@@ -10,8 +10,10 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(params[:review])
     if @review.save
-      flash[:notice] = "Your review has been saved"
-      redirect_to root_path
+      flash[:notice] = "Your review has been saved."
+      redirect_to api_path(:id => @review.api_id)
+    else
+      flash[:error] = "An error occured. Your review was not saved."
     end
   end
 end

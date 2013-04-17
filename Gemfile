@@ -11,6 +11,7 @@ gem 'tweetstream'
 gem "letter_opener", :group => :development
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'figaro'
+gem "jquery-star-rating-rails", "~> 4.0.4"
 
 group :production do
   gem 'pg'

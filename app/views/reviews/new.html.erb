@@ -2,7 +2,7 @@
 <h4>Used this API? Share your thoughts:</h4>
 <%= simple_form_for(@review, html: { class: "form-horizontal" } ) do |f| %>
 <fieldset>
-	<%= f.input :rating, collection: 1..5 %>
+	<%= f.input :rating, collection: 1..5, as: :radio_buttons %>
 	<%= f.input :thoughts, input_html: { cols: 40, rows: 3 } %>
 	<%= f.input :api_id, :as => :hidden, :input_html => { :value => params[:api_id] } %>
 	<%= f.input :user_id, :as => :hidden, :input_html => { :value => current_user.id } %>
