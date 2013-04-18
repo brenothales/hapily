@@ -1,14 +1,14 @@
 <% user = User.find(params[:user_id]) %>
 <%= gravatar_for user %>
 <h3><%= user.name %></h3>
-<p class="since">Member since: <%= @member_since %></p>
-<p class="total">Total votes: <%= @user_votes.count %></p>
-<br>
+	<p class="since">Member since: <%= @member_since %></p>
+	<p class="total">Total votes: <%= @user_votes.count %></p>
+	<br>
 <h4>My Votes</h4>
-<div id="show-faves">
-<% @user_votes.each do |api| %>
-	<% @api_id = api.api_id %>
-	<% @all = Api.where("id = ?", @api_id) %>
-	<%= render 'apis/apis' %>
-<% end %>
-</div>
+	<div id="show-faves">
+	<% @user_votes.each do |api| %>
+		<% @api_id = api.api_id %>
+		<% @all = Api.where("id = ?", @api_id) %>
+			<%= render 'apis/apis' %>
+	<% end %>
+	</div>
