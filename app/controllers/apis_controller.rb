@@ -9,7 +9,7 @@ class ApisController < ApplicationController
       @all = Api.all
       @all = Api.order("votes desc").page(params[:page]).per_page(25)
     end
-    
+   
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @all }
