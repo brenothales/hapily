@@ -2,22 +2,7 @@
 <%= render 'filters' %>
 <br><br>
 <div id="apis">
-<% @all.each do |attribute| %>
-<div class="box">
-	<% favicon = "http://www.google.com/s2/favicons?domain_url=" + attribute.url %>
-	<div class="api-favicon">
-	<%= image_tag(favicon) %>
-	</div>
-	<%= link_to attribute.name, apipage_path(:id => attribute.id) %>
-
-<p class="category"><%= attribute.category %></p><br><br>
-<%= attribute.description %><br><br>
-
-Votes: <%= Vote.where("api_id = ?", attribute.id).count %>
-<%= link_to image_tag('grayarrow.gif'), votes_path(api_id: attribute.id, value: 1), method: :post  %>
-
-</div>
-<% end %>
+	<%= render 'apis' %>
 </div>
 
 <%= will_paginate @all %>

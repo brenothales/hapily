@@ -6,6 +6,6 @@ class UsersController < ApplicationController
   end
   
   def index
-    @users = User.order("last_sign_in_at desc").page(params[:page]).per_page(10)
+    @users = User.order("sign_in_count desc").page(params[:page]).per_page(10)
   end
 end
