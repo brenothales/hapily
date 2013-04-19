@@ -1,7 +1,7 @@
 class ApisController < ApplicationController
   def index
     
-    @categories = Categories.all
+    @categories = Category.all
     
     if params[:tag]
       @all = Api.where("category = ?", params[:tag]).order("votes desc").page(params[:page]).per_page(25)
@@ -17,7 +17,7 @@ class ApisController < ApplicationController
   end
   
   def new
-    @categories = Categories.all
+    @categories = Category.all
     @cat_array = []
     @categories.each do |cat|
       @cat_array.push(cat.name)
@@ -42,5 +42,9 @@ class ApisController < ApplicationController
     @reviews = Review.where("api_id = ?", params[:id])
     
     @review = Review.new
+  end
+  
+  def search
+    @results = Api.where("name ILIKE ? OR description ILIKE ?", "%#{params[:query]}%", "%#{params[:query]}%").all
   end
 end

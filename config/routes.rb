@@ -1,26 +1,33 @@
 Hapily::Application.routes.draw do
   devise_for :users
+  get 'profile(/:user_id)' => 'users#show', :as => :profile
+  get 'all_users' => 'users#index'
 
   root :to => "apis#index"
   
-  resources :apis
+  resources :apis do 
+    #get 'apis(/:id)' => 'apis#show', :as => :apipage
+    collection do
+      get '/search' => 'apis#search'
+      get '(/:tag)' => 'apis#index'
+    end
+  end
+  
   resources :votes
   resources :charges
   resources :reviews
-  
-  get "static_pages/home"
 
   get "about" => "static_pages#about"
-  
-  get 'apis(/:tag)' => 'apis#index'
   
   get 'categories/new' => 'categories#new', :as => :new_category
   post 'categories/create' => 'categories#create'
   
-  get 'profile(/:user_id)' => 'users#show', :as => :profile
-  get 'all_users' => 'users#index'
   
-  get 'apis(/:id)' => 'apis#show', :as => :apipage
+  
+  
+  
+  
+   
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
