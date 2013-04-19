@@ -9,10 +9,9 @@
 	<%= link_to "Sign in", new_user_session_path %> to add a review.
 <% end %>
 <% if signed_in? %>
-<%= link_to "Add a review", new_review_path(:api_id => @api.id), :class => "add-review btn" %>
+	<%= link_to "Add a review", new_review_path(:api_id => @api.id), :class => "add-review btn" %>
 
 <br><br>
-
 
 <div id="review-form">
 <h4>Used this API? Share your thoughts:</h4>
