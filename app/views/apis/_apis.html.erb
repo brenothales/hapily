@@ -9,6 +9,6 @@
 	<%= attribute.description %><br><br>
 
 	Votes: <%= Vote.where("api_id = ?", attribute.id).count %>
-	<%= link_to image_tag('grayarrow.gif'), votes_path(api_id: attribute.id, value: 1), method: :post  %>
+	<%= link_to image_tag('grayarrow.gif'), votes_path(api_id: attribute.id, value: 1), { class: "upvote", method: :post} %>
 </div>
 <% end %>
