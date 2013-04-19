@@ -4,6 +4,9 @@ Hapily::Application.routes.draw do
   root :to => "apis#index"
   
   resources :apis
+  get 'apis(/:tag)' => 'apis#index'
+  get 'apis(/:id)' => 'apis#show', :as => :apipage
+  
   resources :votes
   resources :charges
   resources :reviews
@@ -12,7 +15,7 @@ Hapily::Application.routes.draw do
 
   get "about" => "static_pages#about"
   
-  get 'apis(/:tag)' => 'apis#index'
+  
   
   get 'categories/new' => 'categories#new', :as => :new_category
   post 'categories/create' => 'categories#create'
@@ -21,7 +24,7 @@ Hapily::Application.routes.draw do
   get 'all_users' => 'users#index'
   
   get 'apis/search' => 'apis#search'
-  get 'apis(/:id)' => 'apis#show', :as => :apipage
+  
   
    
 
