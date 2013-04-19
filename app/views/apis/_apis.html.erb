@@ -3,7 +3,7 @@
 	<div class="api-favicon">
 	<%= image_tag("http://www.google.com/s2/favicons?domain_url=" + attribute.url) %>
 	</div>
-	<%= link_to attribute.name, apipage_apis_path(:id => attribute.id) %>
+	<%= link_to attribute.name, apipage_path(:id => attribute.id) %>
 
 	<p class="category"><%= attribute.category %></p><br><br>
 	<%= attribute.description %><br><br>
