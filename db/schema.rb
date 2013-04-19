@@ -62,9 +62,9 @@ ActiveRecord::Schema.define(:version => 20130416031724) do
     t.integer  "api_id"
     t.integer  "user_id"
     t.integer  "vote_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.integer  "value"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+    t.integer  "value",      :default => 0
   end
 
 end

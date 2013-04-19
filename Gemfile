@@ -18,7 +18,7 @@ group :production do
 end
 
 group :development, :test do #use this gem in development and testing only
-  gem 'sqlite3'
+  gem 'pg'
 end
 
 group :assets do
