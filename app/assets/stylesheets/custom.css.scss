@@ -97,3 +97,20 @@ body {
 .search-header {
 	text-align:center;
 }
+
+/* Footer */
+
+.footer {
+	
+	margin-top: 50px;
+	color: $grayLight; 
+	a {
+		color:$gray;
+	}
+}
+
+.social li {
+	padding:5px 8px;
+	line-height:1;
+	list-style-type:none;
+}
