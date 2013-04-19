@@ -5,13 +5,10 @@ Hapily::Application.routes.draw do
 
   root :to => "apis#index"
   
-  resources :apis do
-    collection do 
-      get '/show/:id' => 'apis#show', :as => :apipage
-      get '/search' => 'apis#search'
-      get '(/:tag)' => 'apis#index'
-    end
-  end
+  resources :apis 
+  get 'apis/show/:id' => 'apis#show', :as => :apipage
+  get 'apis/search' => 'apis#search'
+  get 'apis(/:tag)' => 'apis#index'
   
   resources :votes
   resources :charges
