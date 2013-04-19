@@ -68,6 +68,20 @@ Hapily::Application.configure do
   #In production, :host should be set to the actual host of your application.
   config.action_mailer.default_url_options = { :host => 'http://hapily.herokuapp.com/' }
   
+  # Email config
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.perform_deliveries = true
+    config.action_mailer.raise_delivery_errors = false
+    config.action_mailer.default :charset => "utf-8"
+    config.action_mailer.smtp_settings = {
+      address:              'smtp.gmail.com',
+      port:                 587,
+      domain:               'gmail.com',
+      user_name:            'sarajorob',
+      password:             'helpme77',
+      authentication:       'plain',
+      enable_starttls_auto: true  }
+  
   #Keys for Stripe API
   PUBLISHABLE_KEY = "pk_live_p8UsxGG9ledouTLASW3vYCBF"
   SECRET_KEY = "sk_live_M11txjWcbWPxIarBuN9L9cS8"
