@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>New API created: <%= link_to @api.name, @api.url %></h1>
+    <p>
+      Description: <%= @api.description %><br/>
+    </p>
+    <p>
+      Category: <%= @api.category %>
+    </p>
+		<p>
+      Yay! View it on hapily <%= link_to "here", @url %>
+    </p>
+  </body>
+</html>
