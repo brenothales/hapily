@@ -45,7 +45,7 @@ class ApisController < ApplicationController
   end
   
   def search
-    @results = Api.where("name ILIKE ? OR description ILIKE ?", "%#{params[:query]}%", "%#{params[:query]}%").all
+    @results = Api.where("name ILIKE ? OR description ILIKE ? OR category ILIKE ?", "%#{params[:query]}%", "%#{params[:query]}%", "%#{params[:query]}%").all
     if @results.empty?
       flash[:error] = "No APIs match your search criteria."
       redirect_to root_path
