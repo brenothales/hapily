@@ -183,7 +183,7 @@ DEPENDENCIES
   devise
   figaro
   jquery-rails
-  jquery-star-rating-rails (~> 4.0.4)
+  jquery-star-rating-rails
   letter_opener
   pg
   rails (= 3.2.12)

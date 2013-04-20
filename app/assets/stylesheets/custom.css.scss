@@ -94,6 +94,7 @@ body {
 
 .show-social {
 	float:right;
+	margin-top:40px;
 }
 
 .social-buttons {
@@ -106,6 +107,18 @@ body {
 .avg-rating {
 	margin-left:10px;
 }
+
+.api-descript {
+	border:1px solid black;
+	display:inline-block;
+	padding:0px 20px 20px 20px;
+	margin:30px 0px 30px 0px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius:5px;
+	border-radius: 5px;
+	box-shadow:1px 1px 10px #444;
+}
+
 
 /* Search Page */
 
