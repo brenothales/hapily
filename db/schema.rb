@@ -11,17 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130416031724) do
+ActiveRecord::Schema.define(:version => 20130420152119) do
 
   create_table "apis", :force => true do |t|
     t.text     "name"
     t.text     "description"
     t.text     "category"
     t.integer  "favorites"
-    t.datetime "created_at",                 :null => false
-    t.datetime "updated_at",                 :null => false
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
     t.string   "url"
-    t.integer  "votes",       :default => 0
+    t.integer  "votes",         :default => 0
+    t.integer  "created_by_id"
   end
 
   create_table "categories", :force => true do |t|

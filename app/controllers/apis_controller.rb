@@ -27,6 +27,7 @@ class ApisController < ApplicationController
   
   def create
     @api = Api.new(params[:api])
+    @api.created_by_id = current_user.id
     
     if @api.save
       
