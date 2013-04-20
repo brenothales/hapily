@@ -4,12 +4,16 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>New API created: <%= link_to @api.name, @api.url %></h1>
+    <h3>New API created: <%= link_to @api.name, @api.url %></h3>
     <p>
       Description: <%= @api.description %><br/>
     </p>
     <p>
       Category: <%= @api.category %>
+    </p>
+		<% @user = User.find(@api.created_by_id) %>
+		<p>
+      Submitted by: <%= @user.name %>, <%= @user.email %>
     </p>
 		<p>
       Yay! View it on hapily <%= link_to "here", @url %>
