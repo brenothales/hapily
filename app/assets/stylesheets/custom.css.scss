@@ -92,16 +92,30 @@ body {
 	padding-right:3px;
 }
 
+.show-social {
+	float:right;
+}
+
+.social-buttons {
+	list-style-type:none;
+	li {
+		padding:5px;
+	}
+}
+
 /* Search Page */
 
 .search-header {
 	text-align:center;
 }
 
-/* Footer */
+/* Social Sidebar */
 
-.footer {
-	
+.social-sidebar {
+	float:right;
+	padding:5px;
+	border-radius:8px;
+	margin-right:-100px;
 	margin-top: 50px;
 	color: $grayLight; 
 	a {
@@ -110,7 +124,7 @@ body {
 }
 
 .social li {
-	padding:5px 8px;
 	line-height:1;
 	list-style-type:none;
+	padding:5px;
 }
