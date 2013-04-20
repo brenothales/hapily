@@ -44,7 +44,7 @@ class ApisController < ApplicationController
   
   def show
     @api = Api.find(params[:id])
-    @reviews = Review.where("api_id = ?", params[:id])
+    @reviews = Review.where("api_id = ?", params[:id]).order("created_at desc")
     
     #Calculate the average rating
     @reviewsum = 0
