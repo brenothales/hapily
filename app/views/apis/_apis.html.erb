@@ -1,3 +1,12 @@
+<% if @all.empty? %>
+	There are no <%= params[:tag] %> APIs yet.
+	<% if signed_in? %>
+		<%= link_to "Add one.", new_api_path %>
+	<% else %>
+		<%= link_to "Sign in", new_user_session_path %> to add one.
+	<% end %>
+<% end %>
+
 <% @all.each do |attribute| %>
 <div class="box">
 	<div class="api-favicon">
