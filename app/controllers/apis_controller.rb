@@ -12,8 +12,8 @@ class ApisController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @all }
-      format.js
     end
+
   end
   
   def new

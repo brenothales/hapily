@@ -1,3 +1,4 @@
+<div class="search-page">
 <h3 class="search-header">Search Results</h3>
 <br><br>
 <% @results.each do |api| %>
@@ -14,3 +15,4 @@
 		<%= link_to image_tag('grayarrow.gif'), votes_path(api_id: api.id, value: 1), method: :post  %>
 	</div>
 <% end %>
+</div>
