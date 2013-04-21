@@ -7,6 +7,10 @@ class CategoriesController < ApplicationController
     @category = Category.new(params[:category])
     
     if @category.save
+      
+      #Send me an email with new category info
+      CategoryMailer.submit_category(@category).deliver
+      
       flash[:notice] = @category.name + " was added to categories."
     else
       flash[:error] = "An error occurred. Please try again."
@@ -17,7 +21,6 @@ class CategoriesController < ApplicationController
       format.html { redirect_to new_api_path }
       format.js
     end
-    
   end
   
   def index
