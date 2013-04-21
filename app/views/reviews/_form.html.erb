@@ -1,0 +1,22 @@
+<div id="review-form">
+<h4>Used this API? Share your thoughts:</h4>
+<br>
+<%= simple_form_for(@review, remote: true, :id => "new_review_form") do |f| %>
+<fieldset>
+	<label>Rating</label>
+	<input name="review[rating]" class="required star radio_buttons" id="review_rating_1" type="radio" value="1">
+	<input name="review[rating]" class="required star radio_buttons" id="review_rating_2" type="radio" value="2">
+	<input name="review[rating]" class="required star radio_buttons" id="review_rating_3" type="radio" value="3">
+	<input name="review[rating]" class="required star radio_buttons" id="review_rating_4" type="radio" value="4">
+	<input name="review[rating]" class="required star radio_buttons" id="review_rating_5" type="radio" value="5">
+	<br><br>
+	<%= f.input :thoughts, input_html: { cols: 40, rows: 3 } %>
+	<%= f.input :api_id, :as => :hidden, :input_html => { :value => params[:id] } %>
+	<%= f.input :user_id, :as => :hidden, :input_html => { :value => current_user.id } %>
+	
+	<div class="form-actions">
+	<%= f.submit "Submit Review", :class => 'btn' %>
+	</div>
+</fieldset>
+<% end %>
+</div>

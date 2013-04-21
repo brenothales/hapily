@@ -11,9 +11,13 @@ class ReviewsController < ApplicationController
     @review = Review.new(params[:review])
     if @review.save
       flash[:notice] = "Your review has been saved."
-      redirect_to api_path(:id => @review.api_id)
     else
       flash[:error] = "An error occured. Your review was not saved."
+    end
+    
+    respond_to do |format|
+      format.html { redirect_to api_path(:id => @review.api_id) }
+      format.js
     end
   end
 end
