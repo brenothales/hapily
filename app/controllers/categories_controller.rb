@@ -8,7 +8,10 @@ class CategoriesController < ApplicationController
     
     if @category.save
       flash[:notice] = @category.name + " was added to categories."
-      redirect_to new_api_path
+      respond_to do |format|
+        format.html { redirect_to new_api_path }
+        format.js
+      end
     else
       flash[:error] = "An error occurred. Please try again."
     end
