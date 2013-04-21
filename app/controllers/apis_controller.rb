@@ -8,12 +8,10 @@ class ApisController < ApplicationController
     else
       @all = Api.order("votes desc").page(params[:page]).per_page(25)
     end
-   
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @all }
+    
+    if request.xhr?
+      render partial: 'apis'
     end
-
   end
   
   def new

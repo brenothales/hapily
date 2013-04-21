@@ -3,9 +3,4 @@ $(document).ready(function () {
 		e.preventDefault();
 		$('#review-form').show();
 	});
-	$('#review-form').on('submit', function(e) {
-		$('.api-descript').show();
-		$('.all-reviews').show();
-		$('.add-review').show();
-	});
 });
