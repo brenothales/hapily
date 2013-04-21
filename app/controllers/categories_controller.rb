@@ -1,13 +1,13 @@
 class CategoriesController < ApplicationController
   def new
-    @category = Categories.new
+    @category = Category.new
   end
   
   def create
-    @category = Categories.new
+    @category = Category.new(params[:category])
     
     if @category.save
-      redirect_to apis_path
+      redirect_to new_api_path
     end
   end
   

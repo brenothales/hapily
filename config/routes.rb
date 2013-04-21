@@ -18,8 +18,7 @@ Hapily::Application.routes.draw do
 
   get "about" => "static_pages#about"
 
-  get 'categories/new' => 'categories#new', :as => :new_category
-  post 'categories/create' => 'categories#create'
+  resources :categories
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

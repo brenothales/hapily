@@ -3,8 +3,7 @@
 <fieldset>
 	<%= f.input :name, input_html: { cols: 40, rows: 1 } %>
 	<%= f.input :description, input_html: { cols: 40, rows: 3 } %>
-	<%= f.input :category, collection: @cat_array %>
-	
+	<%= f.input :category, collection: @cat_array %><div class="new-category"><%= link_to "Add new category", new_category_path %></div>
 	<%= f.input :url %>
 	<div class="form-actions">
 	<%= f.submit "Add API", :class => 'btn' %>

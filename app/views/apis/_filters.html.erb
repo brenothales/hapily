@@ -1,5 +1,5 @@
 Filter by category:
 <% @categories.each do |cat| %>
-<%= link_to cat["name"], apis_path(tag: cat["name"]) %> |
+<%= link_to cat["name"], apis_path(tag: cat["name"]), :id => "filter" %> |
 <% end %>
 <%= link_to "All", apis_path %>
