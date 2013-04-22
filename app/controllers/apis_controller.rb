@@ -37,7 +37,7 @@ class ApisController < ApplicationController
       ApiMailer.submit_api(@api).deliver
       
       flash[:notice] = "Your API has been saved."
-      redirect_to apis_path
+      redirect_to api_path(:id => @api.id)
     else
       flash[:error] = "Your API was not saved. Please check the fields and try again."
       redirect_to new_api_path
