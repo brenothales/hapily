@@ -17,8 +17,13 @@ group :production do
   gem 'pg'
 end
 
-group :development, :test do #use this gem in development and testing only
+group :development, :test do
   gem 'pg'
+  gem 'rspec-rails'
+end
+
+group :test do
+  gem 'rspec-rails'
 end
 
 group :assets do
