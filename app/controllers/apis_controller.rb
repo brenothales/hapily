@@ -1,14 +1,17 @@
 class ApisController < ApplicationController
   def index
     
-    @categories = Category.all
+    #Sort category filters alphabetically
+    @categories = Category.order("name")
     
+    #For category filters
     if params[:tag]
       @all = Api.where("category = ?", params[:tag]).order("votes desc").page(params[:page]).per_page(25)
     else
       @all = Api.order("votes desc").page(params[:page]).per_page(25)
     end
     
+    #For AJAX
     if request.xhr?
       render partial: 'apis'
     end
