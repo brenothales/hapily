@@ -21,6 +21,7 @@ $ ->
 				console.log 'complete', this, arguments
 				$('#apis').html xhr.responseText
 				$('#apis').masonry('reload')
+				$('.pagination').hide()
 		}
 
 $ -> 

@@ -6,9 +6,9 @@ class ApisController < ApplicationController
     
     #For category filters
     if params[:tag]
-      @all = Api.where("category = ?", params[:tag]).order("votes desc").page(params[:page]).per_page(25)
+      @all = Api.where("category = ?", params[:tag]).order("votes desc").page(params[:page]).per_page(10)
     else
-      @all = Api.order("votes desc").page(params[:page]).per_page(25)
+      @all = Api.order("votes desc").page(params[:page]).per_page(10)
     end
     
     #For AJAX
