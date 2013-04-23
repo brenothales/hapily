@@ -117,7 +117,7 @@ body {
 	-moz-border-radius:5px;
 	border-radius: 5px;
 	box-shadow:1px 1px 10px #444;
-	width:350px;
+	width:400px;
 }
 
 
@@ -134,10 +134,10 @@ body {
 	padding:5px;
 	border-radius:8px;
 	margin-top:75px;
-	color: $grayLight; 
-	a {
-		color:$gray;
-	}
+}
+
+.social-index {
+	float:right;
 }
 
 .social li {

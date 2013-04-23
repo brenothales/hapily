@@ -1,12 +1,19 @@
-<div class="social-sidebar">
+<div class="social-index">
 <ul class="social">
-	<li class="tweet">
-		<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://hapily.herokuapp.com/" data-text="Check out hapily, a simple #API directory!">Tweet</a>
-
-	</li>
-	<li class="fb">
-		<div id="fb-root"></div>
-<div class="fb-like" data-href="http://hapily.herokuapp.com/" data-send="false" data-layout="button_count" data-width="127" data-height="32px" data-show-faces="false"></div>
+	<li id="twit">
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://hapily.herokuapp.com/" data-text="Check out hapily, a simple API directory!">Tweet</a>
 </li>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=572128329488656";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<li id="fb">
+	<div id="fb-root"></div>
+<div class="fb-like" data-href="http://hapily.herokuapp.com/" data-send="false" data-layout="button_count" data-width="127" data-height="32px" data-show-faces="false"></div>
 </ul>
 </div>
