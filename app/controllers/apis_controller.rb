@@ -46,15 +46,8 @@ class ApisController < ApplicationController
   
   def show
     @api = Api.find(params[:id])
-    @reviews = Review.where("api_id = ?", params[:id]).order("created_at desc")
-    
-    #Calculate the average rating
-    @reviewsum = 0
-    @numreviews = @reviews.count
-    @reviews.each do |review|
-      @reviewsum += review.rating
-    end
-    @avg_rating = (@reviewsum / @numreviews).to_i unless @reviewsum == 0
+    @avg_rating = @api.average_rating
+    @reviews = @api.reviews
     
     @review = Review.new
   end
