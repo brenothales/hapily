@@ -5,4 +5,6 @@ class Review < ActiveRecord::Base
   belongs_to :user
   
   validates_presence_of :rating, :thoughts
+  
+  default_scope order('created_at desc')
 end
