@@ -9,4 +9,9 @@ describe "Users" do
       
     it { should have_selector('h2', text: 'Sign up') }
   end
+  
+  describe "index page" do
+    before { visit all_users_path }
+
+  end
 end
