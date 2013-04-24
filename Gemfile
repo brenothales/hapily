@@ -22,7 +22,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'shoulda-matchers'
-  gem 'factory_girl'
+  gem 'factory_girl_rails'
 end
 
 group :test do
