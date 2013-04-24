@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130424165036) do
+ActiveRecord::Schema.define(:version => 20130424224350) do
 
   create_table "apis", :force => true do |t|
     t.text     "name"
@@ -46,6 +46,13 @@ ActiveRecord::Schema.define(:version => 20130424165036) do
   end
 
   add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
+
+  create_table "payments", :force => true do |t|
+    t.string   "results"
+    t.string   "customer_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "reviews", :force => true do |t|
     t.integer  "rating"

@@ -14,9 +14,15 @@ class ChargesController < ApplicationController
     charge = Stripe::Charge.create(
       :customer    => customer.id,
       :amount      => @amount,
-      :description => 'Rails Stripe customer',
+      :description => 'Sara Coding Donation',
       :currency    => 'usd'
     )
+    
+    if Stripe::Charge.create
+      Payment.create!({ results: "success", customer_id: customer.id })
+    else
+      Payment.create!({ results: "failure", customer_id: customer.id })
+    end
 
   rescue Stripe::CardError => e
     flash[:error] = e.message
