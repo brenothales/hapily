@@ -12,6 +12,7 @@ gem "letter_opener", :group => :development
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'figaro'
 gem "jquery-star-rating-rails"
+gem 'delayed_job_active_record'
 
 group :production do
   gem 'pg'
