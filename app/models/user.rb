@@ -11,4 +11,6 @@ class User < ActiveRecord::Base
   
   has_many :votes
   has_many :reviews
+  
+  default_scope order('sign_in_count desc')
 end
