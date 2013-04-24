@@ -34,7 +34,7 @@ class ApisController < ApplicationController
     if @api.save
       
       #Send me an email with API info
-      ApiMailer.submit_api(@api).deliver
+      ApiMailer.delay.submit_api(@api)
       
       flash[:notice] = "Your API has been saved."
       redirect_to api_path(:id => @api.id)

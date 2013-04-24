@@ -9,7 +9,7 @@ class CategoriesController < ApplicationController
     if @category.save
       
       #Send me an email with new category info
-      CategoryMailer.submit_category(@category).deliver
+      CategoryMailer.delay.submit_category(@category)
       
       flash[:notice] = @category.name + " was added to categories."
     else
