@@ -13,6 +13,7 @@ gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'figaro'
 gem "jquery-star-rating-rails"
 gem 'delayed_job_active_record'
+gem 'daemons'
 
 group :production do
   gem 'pg'
