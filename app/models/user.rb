@@ -13,4 +13,8 @@ class User < ActiveRecord::Base
   has_many :reviews
   
   default_scope order('sign_in_count desc')
+  
+  def already_voted_on?(api_id)
+    self.votes.where(api_id: api_id).count > 0
+  end
 end
