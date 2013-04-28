@@ -1,6 +1,5 @@
 FactoryGirl.define do
   factory :user do
-    id Random.rand(1..9)
     sequence(:name) {|a| "UserName#{n}"}
     sequence (:email) {|b| "test#{b}@example.com"}
     password "foobarbaz"
@@ -21,6 +20,11 @@ FactoryGirl.define do
     api_id 1
     user_id 1
     vote_id 1
+  end
+
+  factory :review do
+    rating Random.rand(1..5)
+    sequence(:thoughts) {|m| "blah#{m}blah"}
   end
 end
 
