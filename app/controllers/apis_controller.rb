@@ -24,6 +24,7 @@ class ApisController < ApplicationController
       @cat_array.push(cat.name)
     end
     @cat_array.sort_by! { |m| m.downcase }
+    
     @api = Api.new
   end
   
