@@ -13,7 +13,7 @@ describe CategoryMailer do
       mail.subject.should eq category.name + ' added to hapily'
     end
 
-    it "should have the category name in the email" do
+    it "should have @category in the email body" do
       mail.body.raw_source.should include category.name
     end
   end
