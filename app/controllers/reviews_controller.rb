@@ -1,4 +1,6 @@
 class ReviewsController < ApplicationController
+  before_filter :authenticate_user!
+  
   def new
     unless signed_in?
       flash[:error] = "You must be signed in to write a review."
