@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :payment do
-    results "MyString"
-    customer_id "MyString"
+    results "Success"
+    customer_id "abc123"
   end
 end
