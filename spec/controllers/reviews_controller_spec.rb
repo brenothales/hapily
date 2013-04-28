@@ -4,8 +4,14 @@ describe ReviewsController do
 
   describe "GET #new" do
     context "user signed in" do
-      it "should show 'Add Review' button"
-      it "should assign a new review to @review"
+      it "should show 'Add Review' button" do
+        get :show, api_id: 1
+        it { should.have_selector('a', text: 'Add a review')}
+      end
+      it "should assign a new review to @review" do
+        get :new
+        assigns(:review).should_not be_nil
+      end
     end
 
     context "user not signed in" do

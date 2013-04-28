@@ -24,7 +24,7 @@ describe ApisController do
 
   describe "POST #create" do
     context "with valid attributes" do
-      it "saves the new api to the database" do
+      it "saves the new api to the database" do #throws an undefined method 'authenticate' error because each api has a user_id attribute and it cant find the user...how should i fix this?
         expect {
           post :create, api: FactoryGirl.attributes_for(:api)
         }.should change(Api, :count).by(1)
@@ -45,7 +45,14 @@ describe ApisController do
   end
 
   describe "GET #show" do
-    it "should find the correct api given an ID"
+    valid_api = FactoryGirl.create(:api)
+    it "should find the correct api given an ID" do
+      Api.find(valid_api.id).should eq valid_api
+    end
+    it "should render the show view for a given API" do
+      get :show, id: valid_api.id
+      response.should render_template :show
+    end
   end
 
   describe "GET #search" do

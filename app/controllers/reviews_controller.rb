@@ -14,7 +14,7 @@ class ReviewsController < ApplicationController
     if @review.save
       flash[:notice] = "Your review has been saved."
     else
-      flash[:error] = "An error occured. Your review was not saved."
+      flash[:error] = "An error occurred. Your review was not saved."
     end
     
     respond_to do |format|
