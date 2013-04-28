@@ -22,17 +22,23 @@ describe Api do
   end
   
   describe "#average_rating" do
+    before(:each) do
+      @api = FactoryGirl.create(:api)
+    end
+
+    it "should get the reviews for each api" do
+      api_has_reviews = FactoryGirl.create(:api)
+      api_has_reviews.reviews.create rating: 5, thoughts: 'blahblah'
+      api_has_reviews.reviews.count.should eq 1
+    end
     it "should be nil when there are no reviews" do
-      api_without_reviews = Api.new name: 'Fake API', description: 'It does something', category: 'Fake category', url: 'http://www.example.com'
-      api_without_reviews.average_rating.should be_nil
+      @api.average_rating.should be_nil
     end
     it "should calculate average rating properly" do
-      api_with_reviews = Api.new name: 'Fake API', description: 'It does something', category: 'Fake category', url: 'http://www.example.com'
-      api_with_reviews.save
-      api_with_reviews.reviews.create rating: Random.rand(1..5), thoughts: 'blah'
-      api_with_reviews.reviews.create rating: Random.rand(1..5), thoughts: 'blah'
-      average = api_with_reviews.reviews.inject(0) { |sum, review| sum += review.rating } / api_with_reviews.reviews.count
-      api_with_reviews.average_rating.should eq average
+      [1,5].each do |r|
+        FactoryGirl.create(:review, rating: r, api: @api)
+      end
+      @api.average_rating.should eq 3
     end
   end
 end
