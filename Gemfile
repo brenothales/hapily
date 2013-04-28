@@ -14,6 +14,7 @@ gem 'figaro'
 gem "jquery-star-rating-rails"
 gem 'delayed_job_active_record'
 gem 'daemons'
+gem 'simplecov', :require => false, :group => :test
 
 group :production do
   gem 'pg'
