@@ -14,7 +14,7 @@ describe ApiMailer do
       mail.subject.should eq api_to_email.name + ' added to hapily'
     end
 
-    it "has the API name in the email body" do
+    it "has @api in the email body" do
       mail.body.raw_source.should include api_to_email.name
     end
 
@@ -22,7 +22,7 @@ describe ApiMailer do
       mail.body.raw_source.should include api_to_email.url
     end
 
-    it "has the API show page url in the email body" do
+    it "has @url in the email body" do
       mail.body.raw_source.should include "http://hapily.herokuapp.com/apis/show/" + api_to_email.id.to_s
     end
 
