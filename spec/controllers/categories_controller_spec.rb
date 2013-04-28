@@ -10,16 +10,22 @@ describe CategoriesController do
   end
 
   describe "POST #create" do
-    it "responds to Ajax request" do #not sure how to test this correctly
-      xhr :get, :create
+    it "responds to Ajax request" do
+      xhr :get, :create, format: "html"
       response.should redirect_to new_api_path
     end
 
     context "with valid attributes" do
-      it "creates a new category and saves to the database" do
+      it "assigns new category in @category and saves to the database" do
         expect{
           post :create, category: FactoryGirl.attributes_for(:category)
         }.to change(Category,:count).by(1)
+      end
+
+      it "displays the flash[:notice]" do
+        post :create, category: FactoryGirl.attributes_for(:category)
+        assigns(:category)
+        flash[:notice].should_not be_nil
       end
     end
 
@@ -28,6 +34,12 @@ describe CategoriesController do
         expect{
           post :create, category: FactoryGirl.attributes_for(:category, name: "")
         }.to_not change(Category, :count)
+      end
+
+      it "displays the flash[:error]" do
+        post :create, category: FactoryGirl.attributes_for(:category, name: "")
+        assigns(:category)
+        flash[:error].should_not be_nil
       end
     end
   end
