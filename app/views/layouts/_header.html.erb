@@ -18,8 +18,8 @@
 						</li>
 					</ul>
 					<ul class="nav pull-right">
-						<form class="navbar-search" method="get" action="/apis/search">
-						  <input type="text" class="search-query" placeholder="Search" name="query">
+						<form class="navbar-search" method="get" action="/apis/search" id="search">
+						  <input type="text" class="search-query" placeholder="Search" name="query" autocomplete="on">
 						</form>
 						<% if user_signed_in? %>
 						<li><%= link_to "Add an API", new_api_path %></li>

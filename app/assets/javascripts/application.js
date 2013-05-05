@@ -11,8 +11,10 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
+//= require jquery-ui
 //= require jquery_ujs
 //= require jquery.masonry.min.js
+//= require masonry/jquery.infinitescroll.min
 //= require jquery-star-rating
 //= require bootstrap
 //= require_tree .
