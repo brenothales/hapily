@@ -6,10 +6,10 @@ Hapily::Application.routes.draw do
   root :to => "apis#index"
   
   get 'apis/search' => 'apis#search'
-  resources :apis 
+  resources :apis
   get 'apis(/:tag)' => 'apis#index'
   get 'apis/show/:id' => 'apis#show', :as => :apipage
-  
+
   
   
   resources :votes

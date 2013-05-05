@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130424224350) do
+ActiveRecord::Schema.define(:version => 20130504230422) do
 
   create_table "apis", :force => true do |t|
     t.text     "name"
@@ -61,6 +61,13 @@ ActiveRecord::Schema.define(:version => 20130424224350) do
     t.datetime "updated_at", :null => false
     t.integer  "api_id"
     t.integer  "user_id"
+  end
+
+  create_table "search_suggestions", :force => true do |t|
+    t.string   "term"
+    t.integer  "popularity"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|
