@@ -89,6 +89,8 @@ GEM
       eventmachine (~> 1.0)
       http_parser.rb (~> 0.5)
       simple_oauth (~> 0.1)
+    emoji-rspec (0.0.1)
+      rspec (~> 2.10)
     erubis (2.7.0)
     eventmachine (1.0.3)
     execjs (1.4.0)
@@ -122,9 +124,12 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    masonry-rails (0.2.0)
+      rails
     mime-types (1.22)
     multi_json (1.7.2)
     multipart-post (1.2.0)
+    newrelic_rpm (3.6.1.88)
     nokogiri (1.5.9)
     orm_adapter (0.4.0)
     pg (0.15.1)
@@ -234,11 +239,14 @@ DEPENDENCIES
   daemons
   delayed_job_active_record
   devise
+  emoji-rspec
   factory_girl_rails
   figaro
   jquery-rails
   jquery-star-rating-rails
   letter_opener
+  masonry-rails
+  newrelic_rpm
   pg
   rails (= 3.2.12)
   rspec-rails

@@ -1,1 +1,2 @@
 --color
+--require emoji-rspec --format smiles

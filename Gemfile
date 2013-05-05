@@ -15,6 +15,8 @@ gem "jquery-star-rating-rails"
 gem 'delayed_job_active_record'
 gem 'daemons'
 gem 'simplecov', :require => false, :group => :test
+gem 'newrelic_rpm'
+gem 'masonry-rails'
 
 group :production do
   gem 'pg'
@@ -30,6 +32,7 @@ end
 
 group :test do
   gem 'capybara'
+  gem 'emoji-rspec'
 end
 
 group :assets do
