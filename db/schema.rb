@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130504230422) do
+ActiveRecord::Schema.define(:version => 20130506170321) do
 
   create_table "apis", :force => true do |t|
     t.text     "name"
@@ -47,6 +47,14 @@ ActiveRecord::Schema.define(:version => 20130504230422) do
 
   add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
 
+  create_table "horcruxes", :force => true do |t|
+    t.string   "name"
+    t.string   "location"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.string   "destroyed_by"
+  end
+
   create_table "payments", :force => true do |t|
     t.string   "results"
     t.string   "customer_id"
@@ -63,13 +71,6 @@ ActiveRecord::Schema.define(:version => 20130504230422) do
     t.integer  "user_id"
   end
 
-  create_table "search_suggestions", :force => true do |t|
-    t.string   "term"
-    t.integer  "popularity"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false
@@ -84,10 +85,6 @@ ActiveRecord::Schema.define(:version => 20130504230422) do
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.string   "name"
-    t.integer  "uid"
-    t.string   "fb_name"
-    t.string   "oauth_token"
-    t.datetime "oauth_expires_at"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

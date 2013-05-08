@@ -1,6 +1,7 @@
 jQuery ->
-    $('#apis').imagesLoaded ->
-        $('#apis').masonry itemSelector: ".box"
+  $('#apis').masonry
+    itemSelector: ".box"
+    isAnimated: true
 
 		if $('.pagination').length
 			$(window).scroll ->
@@ -38,12 +39,14 @@ $ ->
 		}
 
 $ ->
-	$('.upvote').on 'click', (e) ->
-		console.log 'click', this, arguments
-		element = $(e.currentTarget)
-		$.ajax {
-			url: element.attr('href')
-			complete: (xhr, status) ->
-				console.log 'complete', this, arguments
-				$('#apis').html xhr.responseText
-		}
+  $('.upvote').on 'click', (e) ->
+    console.log 'click', this, arguments
+    element = $(e.currentTarget)
+    e.preventDefault()
+    $.ajax {
+      url: element.attr('href')
+      complete: (xhr, status) ->
+        console.log 'complete', this, arguments
+        $('#apis').html xhr.responseText
+        $('#apis').masonry('reload')
+    }

@@ -10,7 +10,7 @@ class ApisController < ApplicationController
     else
       @all = Api.order("votes desc").page(params[:page]).per_page(25)
     end
-    
+
     #For AJAX
     if request.xhr?
       render partial: 'apis'
@@ -18,13 +18,6 @@ class ApisController < ApplicationController
   end
   
   def new
-    @categories = Category.all
-    @cat_array = []
-    @categories.each do |cat|
-      @cat_array.push(cat.name)
-    end
-    @cat_array.sort_by! { |m| m.downcase }
-    
     @api = Api.new
   end
   

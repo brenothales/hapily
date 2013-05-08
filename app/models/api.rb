@@ -14,4 +14,5 @@ class Api < ActiveRecord::Base
     review_sum = reviews.inject(0) { |sum, review| sum += review.rating }
     avg_rating = (review_sum / reviews.count).to_i unless review_sum == 0
   end
+
 end

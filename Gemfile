@@ -18,6 +18,7 @@ gem 'simplecov', :require => false, :group => :test
 gem 'newrelic_rpm'
 gem 'masonry-rails'
 
+
 group :production do
   gem 'pg'
 end

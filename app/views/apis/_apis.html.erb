@@ -19,7 +19,7 @@
 	
 	<%= link_to pluralize((Review.where("api_id = ?", attribute.id).count), 'review'), apipage_path(:id => attribute.id) %> |
 	<%= pluralize((Vote.where("api_id = ?", attribute.id).count), 'vote') %>
-	<%= link_to image_tag('grayarrow.gif'), votes_path(api_id: attribute.id, value: 1), { class: "upvote", method: :post } %>
+	<%= link_to image_tag('grayarrow.gif'), votes_path(api_id: attribute.id, value: 1), class: "upvote", method: :post %>
 	
 </div>
 <% end %>
