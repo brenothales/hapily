@@ -3,14 +3,6 @@ jQuery ->
     itemSelector: ".box"
     isAnimated: true
 
-		if $('.pagination').length
-			$(window).scroll ->
-				url = $('.pagination .next_page a').attr('href')
-				if url && $(window).scrollTop() > $(document).height() - $(window).height() - 50
-				  $('.pagination').text("Fetching more APIs...")
-				  $.getScript(url)
-				$(window).scroll()
-
 $ ->
 	$('.filter').on 'click', (e) ->
 		console.log 'click', this, arguments
