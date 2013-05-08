@@ -3,6 +3,7 @@ jQuery ->
     itemSelector: ".box"
     isAnimated: true
 
+
 $ ->
 	$('.filter').on 'click', (e) ->
 		console.log 'click', this, arguments
