@@ -57,22 +57,16 @@ body {
 /* For transitions */
 
 .box {
-  -webkit-transition-duration: 0.7s;
-  -moz-transition-duration: 0.7s;
-  -ms-transition-duration: 0.7s;
-  -o-transition-duration: 0.7s;
-  transition-duration: 0.7s;
-}
-
-.box {
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -ms-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
   -webkit-transition-property: height, width;
   -moz-transition-property: height, width;
   -ms-transition-property: height, width;
   -o-transition-property: height, width;
   transition-property: height, width;
-}
-
-.box {
   -webkit-transition-property: left, right, top;
   -moz-transition-property: left, right, top;
   -ms-transition-property: left, right, top;
