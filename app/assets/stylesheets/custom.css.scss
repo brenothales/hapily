@@ -15,7 +15,13 @@ body {
 
 /* Navbar */
 .navbar {
-	font-color: white;
+  font-color: white;
+  .brand {
+    margin-left: 20px;
+  }
+  .nav-pull-right {
+    margin-right: 13px;
+  }
 }
 
 .hero-unit h2 {
