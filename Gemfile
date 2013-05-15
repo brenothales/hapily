@@ -17,6 +17,8 @@ gem 'daemons'
 gem 'simplecov', :require => false, :group => :test
 gem 'newrelic_rpm'
 gem 'masonry-rails'
+gem 'json'
+gem 'httparty'
 
 
 group :production do

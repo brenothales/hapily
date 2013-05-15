@@ -8,10 +8,15 @@
 		</span>
 	<% end %>
 </h3>
-
+<br>
 </li>
-<p class="api-info"><%= @api.description %></p>
-<p class="api-info">Votes: <%= @api["votes"] %></p>
+<p class="api-info"><span class="api-label">About the API: </span><%= @api.description %></p>
+<br>
+<% unless @api.company_description.include? "[" %>
+<p class="api-info"><span class="api-label">About <%= @api.company_name %>: </span><%= @api.company_description %></p>
+<br>
+<% end %>
+<p class="api-info"><span class="api-label">Votes: </span><%= @api["votes"] %></p>
 </div>
 <div class="show-social">
 	<%= render 'showsocial' %>

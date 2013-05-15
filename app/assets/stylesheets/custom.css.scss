@@ -131,6 +131,10 @@ body {
 	margin-left:10px;
 }
 
+.api-header {
+  font-size: 200%;
+}
+
 .api-descript {
 	border:1px solid black;
 	display:inline-block;
@@ -140,7 +144,12 @@ body {
 	-moz-border-radius:5px;
 	border-radius: 5px;
 	box-shadow:1px 1px 10px #444;
-	width:400px;
+	width:600px;
+    background-color: #eeeeee;
+    font-size: 120%;
+    .api-label {
+      font-size: 125%;
+    }
 }
 
 
