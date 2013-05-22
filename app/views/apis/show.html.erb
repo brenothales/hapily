@@ -12,7 +12,7 @@
 </li>
 <p class="api-info"><span class="api-label">About the API: </span><%= @api.description %></p>
 <br>
-<% unless @api.company_description.include? "[" %>
+<% unless @api.company_description.include? "[" || @api.company_description %>
 <p class="api-info"><span class="api-label">About <%= @api.company_name %>: </span><%= @api.company_description %></p>
 <br>
 <% end %>

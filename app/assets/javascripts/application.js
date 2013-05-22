@@ -17,4 +17,6 @@
 //= require masonry/jquery.infinitescroll.min
 //= require jquery-star-rating
 //= require bootstrap
+//= require angular
+//= require angular-resource
 //= require_tree .

@@ -1,4 +1,6 @@
 class ApisController < ApplicationController
+  respond_to :json
+
   def index
     
     #Sort category filters alphabetically
