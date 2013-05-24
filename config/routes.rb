@@ -6,6 +6,7 @@ Hapily::Application.routes.draw do
   root :to => "apis#index"
   
   get 'apis/search' => 'apis#search'
+  get 'display' => 'apis#display'
   resources :apis
   get 'apis(/:tag)' => 'apis#index'
   get 'apis/show/:id' => 'apis#show', :as => :apipage

@@ -1,5 +1,4 @@
 class ApisController < ApplicationController
-  respond_to :json
 
   def index
     
@@ -9,6 +8,8 @@ class ApisController < ApplicationController
     #For category filters
     if params[:tag]
       @all = Api.where("category = ?", params[:tag]).order("votes desc").page(params[:page]).per_page(25)
+    elsif params[:query]
+      respond_with Api.where("name ILIKE ? OR description ILIKE ? OR category ILIKE ?", "%#{params[:query]}%", "%#{params[:query]}%", "%#{params[:query]}%").all
     else
       @all = Api.order("votes desc").page(params[:page]).per_page(25)
     end

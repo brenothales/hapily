@@ -43,3 +43,9 @@ $ ->
         $('#apis').html xhr.responseText
         $('#apis').masonry('reload')
     }
+
+app = angular.module("Hapily", ["ngResource"])
+
+@SearchCtrl = ($scope, $resource) ->
+  Search = $resource('/display/')
+  $scope.results = Search.get()

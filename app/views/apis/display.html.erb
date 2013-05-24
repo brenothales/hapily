@@ -1,0 +1,6 @@
+<div ng-controller="SearchCtrl">
+<input ng-model="query"/>
+<div class="box" ng-controller="SearchCtrl" ng-repeat="result in results | filter:query">
+  {{result.name}}
+</div>
+</div>
