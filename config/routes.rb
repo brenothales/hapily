@@ -1,9 +1,16 @@
 Hapily::Application.routes.draw do
+
+  root :to => "apis#index"
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+
   devise_for :users
+  ActiveAdmin.routes(self)
   get 'profile(/:user_id)' => 'users#show', :as => :profile
   get 'all_users' => 'users#index'
 
-  root :to => "apis#index"
+
   
   get 'apis/search' => 'apis#search'
   get 'display' => 'apis#display'

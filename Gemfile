@@ -5,7 +5,7 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'simple_form'
 gem "cocaine", "~> 0.5.0"
-gem 'will_paginate'
+gem 'will_paginate', '~> 3.0'
 gem 'bootstrap-will_paginate', '0.0.6'
 gem 'tweetstream'
 gem "letter_opener", :group => :development
@@ -19,6 +19,9 @@ gem 'newrelic_rpm'
 gem 'masonry-rails'
 gem 'json'
 gem 'httparty'
+gem 'activeadmin'
+gem "meta_search",    '>= 1.1.0.pre'
+gem 'kaminari'
 
 
 group :production do
